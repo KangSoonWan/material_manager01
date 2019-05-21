@@ -23,6 +23,14 @@ public class TestController {
 		return "test";
 		
 	}
-			
+@RequestMapping("/List")
+	
+	private String ListContorller() throws Exception{
+		System.out.println("pass");
+		
+		
+		return "List";
+		
+	}	
 	
 }

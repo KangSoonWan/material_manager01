@@ -8,6 +8,7 @@ import lombok.Data;
 public class ProductVO {
 
 	private String product_id;
+	private String product_name;
 	private String brand;
 	private Date manufacture_date;
 	private Date purchase_date;

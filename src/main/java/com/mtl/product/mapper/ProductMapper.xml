@@ -10,6 +10,46 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 				COUNT(*)
 			FROM PRODUCT
 	</select>
+	
+	<select id="productList" resultType="com.mtl.product.domain.ProductVO">
+	 		SELECT *
+            	
+        	FROM PRODUCT
 
+	</select>
+
+	 <select id="productDetail" parameterType="String" resultType="com.mtl.product.domain.ProductVO">
+        SELECT
+            *
+        FROM PRODUCT
+        WHERE
+            product_id = #{product_id}
+    </select>
+    
+    <insert id="productInsert" parameterType="com.mtl.product.domain.ProductVO">
+        INSERT INTO
+        PRODUCT (product_id, brand, manufacture_date, purchase_date, purchase_price,
+        purchase_url, destruction, deprecation, as_number)
+        
+        VALUES(#{product_id},#{brand},#{manufacture_date},#{purchase_date},#{purchase_price},
+        #{purchase_url},#{destruction},#{deprecation},#{as_number}) 
+    </insert>
+        
+    <update id="productUpdate" parameterType="com.mtl.product.domain.ProductVO">
+        UPDATE PRODUCT
+            SET
+        <if test="product_name != null">
+            product_name = #{product_name}
+        </if>
+        <if test="product_name != null and product_id != null"> , </if>
+        <if test="product_name != null">
+            PRODUCT_ID = #{product_id}
+        </if>
+        WHERE PRODUCT_ID = #{PRODUCT_ID}
+    </update>
+    
+    <delete id="productDelete" parameterType="String">
+        DELETE FROM BOARD WHERE BNO = #{bno}
+    </delete>
 
 </mapper>
