@@ -1,4 +1,4 @@
-package com.mtl.controller;
+package com.mtl;
 
 import javax.sql.DataSource;
 

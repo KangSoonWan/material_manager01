@@ -15,12 +15,12 @@ public interface ProductMapper {
 	//제품 목록
 	public List<ProductVO> productList() throws Exception; 
 	//제품 상세
-	public ProductVO productDetail(String product_id) throws Exception;
+	public ProductVO productDetail(int product_id) throws Exception;
 	//제품 등록
 	public void productInsert(ProductVO product) throws Exception;
 	//제품 수정
 	public void productUpdate(ProductVO product) throws Exception;
 	//제품 파기
-	public void productDelete(String product_id) throws Exception;
+	public void productDelete(int product_id) throws Exception;
 
 }

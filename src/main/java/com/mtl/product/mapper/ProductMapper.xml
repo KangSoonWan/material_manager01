@@ -18,7 +18,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	</select>
 
-	 <select id="productDetail" parameterType="String" resultType="com.mtl.product.domain.ProductVO">
+	 <select id="productDetail" parameterType="int" resultType="com.mtl.product.domain.ProductVO">
         SELECT
             *
         FROM PRODUCT
@@ -41,15 +41,42 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <if test="product_name != null">
             product_name = #{product_name}
         </if>
-        <if test="product_name != null and product_id != null"> , </if>
-        <if test="product_name != null">
-            PRODUCT_ID = #{product_id}
+        <if test="product_name != null and brand != null"> , </if>
+        <if test="brand != null">
+            BRAND = #{brand}
         </if>
-        WHERE PRODUCT_ID = #{PRODUCT_ID}
+        <if test="product_name != null and manufacture_date != null"> , </if>
+        <if test="manufacture_date != null">
+        WHERE MANUFACTURE_DATE = #{manufacture_date}
+        </if>
+        <if test="product_name != null and purchase_date != null"> , </if>
+        <if test="purchase_date != null">
+        WHERE purchase_date = #{purchase_date}
+        </if>
+        <if test="product_name != null and purchase_price != null"> , </if>
+        <if test="purchase_price != null">
+        WHERE purchase_price = #{purchase_price}
+        </if>
+        <if test="product_name != null and purchase_url != null"> , </if>
+        <if test="purchase_url != null">
+        WHERE purchase_url = #{purchase_url}
+        </if>
+        <if test="product_name != null and destruction != null"> , </if>
+        <if test="destruction != null">
+        WHERE MANUFACTURE_DATE = #{manufacture_date}
+        </if>
+        <if test="product_name != null and deprecation != null"> , </if>
+        <if test="deprecation != null">
+        WHERE MANUFACTURE_DATE = #{manufacture_date}
+        </if>
+        <if test="product_name != null and as_number != null"> , </if>
+        <if test="as_number != null">
+        WHERE MANUFACTURE_DATE = #{manufacture_date}
+        </if>
     </update>
     
-    <delete id="productDelete" parameterType="String">
-        DELETE FROM BOARD WHERE BNO = #{bno}
+    <delete id="productDelete" parameterType="int">
+        DELETE FROM PRODUCT WHERE product_id = #{product_id}
     </delete>
 
 </mapper>
