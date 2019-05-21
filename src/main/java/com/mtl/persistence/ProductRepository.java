@@ -1,7 +1,8 @@
-package org.mtl.persistence;
+package com.mtl.persistence;
 
-import org.mtl.domain.Product;
 import org.springframework.data.repository.CrudRepository;
+
+import com.mtl.domain.Product;
 
 public interface ProductRepository extends CrudRepository<Product, String>{
 

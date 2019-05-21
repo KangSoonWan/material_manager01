@@ -1,4 +1,4 @@
-package org.mtl.domain;
+package com.mtl.domain;
 
 
 import java.sql.Timestamp;
