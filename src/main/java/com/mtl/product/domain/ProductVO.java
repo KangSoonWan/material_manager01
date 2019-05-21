@@ -8,6 +8,7 @@ import lombok.Data;
 public class ProductVO {
 
 	private String product_id;
+	private String brand;
 	private Date manufacture_date;
 	private Date purchase_date;
 	private int purchase_price;
@@ -15,4 +16,5 @@ public class ProductVO {
 	private String destruction;
 	private String deprecation;
 	private String as_number;
+	
 }
