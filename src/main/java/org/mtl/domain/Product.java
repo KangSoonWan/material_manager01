@@ -1,4 +1,4 @@
-package org.funny.domain;
+package org.mtl.domain;
 
 
 import java.sql.Timestamp;

@@ -1,6 +1,6 @@
-package org.funny.persistence;
+package org.mtl.persistence;
 
-import org.funny.domain.Product;
+import org.mtl.domain.Product;
 import org.springframework.data.repository.CrudRepository;
 
 public interface ProductRepository extends CrudRepository<Product, String>{

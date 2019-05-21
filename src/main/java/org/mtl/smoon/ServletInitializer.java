@@ -1,4 +1,4 @@
-package org.funny.smoon;
+package org.mtl.smoon;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

@@ -1,4 +1,4 @@
-package org.funny.smoon;
+package org.mtl.smoon;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
