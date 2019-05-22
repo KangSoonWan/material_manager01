@@ -40,12 +40,16 @@
             <artifactId>tomcat-embed-jasper</artifactId>
             <version>8.0.36</version>
         </dependency>
-                
+        <!--JSTL -->
         <dependency>
             <groupId>javax.servlet.jsp.jstl</groupId>
             <artifactId>javax.servlet.jsp.jstl-api</artifactId>
             <version>1.2.1</version>
         </dependency>
+        <dependency>
+   			<groupId>javax.servlet</groupId>
+   			<artifactId>jstl</artifactId>
+  		</dependency>
         
         <!--JDBC -->
         <dependency>

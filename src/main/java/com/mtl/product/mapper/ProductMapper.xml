@@ -28,10 +28,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     
     <insert id="productInsert" parameterType="com.mtl.product.domain.ProductVO">
         INSERT INTO
-        PRODUCT (product_id, brand, manufacture_date, purchase_date, purchase_price,
+        PRODUCT (product_id, product_name, brand, manufacture_date, purchase_date, purchase_price,
         purchase_url, destruction, deprecation, as_number)
         
-        VALUES(#{product_id},#{brand},#{manufacture_date},#{purchase_date},#{purchase_price},
+        VALUES(#{product_id},#{product_name},#{brand},#{manufacture_date},#{purchase_date},#{purchase_price},
         #{purchase_url},#{destruction},#{deprecation},#{as_number}) 
     </insert>
         
@@ -41,37 +41,38 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <if test="product_name != null">
             product_name = #{product_name}
         </if>
+        
         <if test="product_name != null and brand != null"> , </if>
         <if test="brand != null">
             BRAND = #{brand}
         </if>
         <if test="product_name != null and manufacture_date != null"> , </if>
         <if test="manufacture_date != null">
-        WHERE MANUFACTURE_DATE = #{manufacture_date}
+        	MANUFACTURE_DATE = #{manufacture_date}
         </if>
         <if test="product_name != null and purchase_date != null"> , </if>
         <if test="purchase_date != null">
-        WHERE purchase_date = #{purchase_date}
+        	purchase_date = #{purchase_date}
         </if>
         <if test="product_name != null and purchase_price != null"> , </if>
         <if test="purchase_price != null">
-        WHERE purchase_price = #{purchase_price}
+        	purchase_price = #{purchase_price}
         </if>
         <if test="product_name != null and purchase_url != null"> , </if>
         <if test="purchase_url != null">
-        WHERE purchase_url = #{purchase_url}
+        	purchase_url = #{purchase_url}
         </if>
         <if test="product_name != null and destruction != null"> , </if>
         <if test="destruction != null">
-        WHERE MANUFACTURE_DATE = #{manufacture_date}
+        	MANUFACTURE_DATE = #{manufacture_date}
         </if>
         <if test="product_name != null and deprecation != null"> , </if>
         <if test="deprecation != null">
-        WHERE MANUFACTURE_DATE = #{manufacture_date}
+        	MANUFACTURE_DATE = #{manufacture_date}
         </if>
         <if test="product_name != null and as_number != null"> , </if>
         <if test="as_number != null">
-        WHERE MANUFACTURE_DATE = #{manufacture_date}
+        	MANUFACTURE_DATE = #{manufacture_date}
         </if>
     </update>
     

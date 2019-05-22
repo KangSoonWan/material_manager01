@@ -14,8 +14,8 @@ public class ProductVO {
 	private Date purchase_date;
 	private int purchase_price;
 	private String purchase_url;
-	private String destruction;
-	private String deprecation;
+	private int destruction;
+	private int deprecation;
 	private String as_number;
 	
 }
