@@ -51,7 +51,7 @@ public class ProductController {
     
     @RequestMapping("/insertProc")
     private String productInsertProc(HttpServletRequest request) throws Exception{
-        
+        System.out.println("/insertProc 통과");
         ProductVO product = new ProductVO();
         
         
@@ -101,6 +101,8 @@ public class ProductController {
     @RequestMapping("/update/{product_id}")
     private String productUpdateForm(@PathVariable int product_id, Model model) throws Exception{
         
+    	System.out.println("update 통과");
+    	
     	model.addAttribute("detail", productService.productDetailService(product_id));
     	
         
@@ -110,12 +112,28 @@ public class ProductController {
     
     
     @RequestMapping("/updateProc")
-    private int productUpdateProc(HttpServletRequest request) throws Exception{
+    private String productUpdateProc(HttpServletRequest request) throws Exception{
         
-        ProductVO product = (ProductVO) request.getParameterMap();
+    	ProductVO product = (ProductVO) request.getParameterMap();
+            	
+    	DateFormat df = new SimpleDateFormat("yyyy-MM-dd"); 
+        Date manufacture_form = df.parse(request.getParameter("manufacture_date"));
+        Date purchase_form = df.parse(request.getParameter("purchase_date"));
+    	
+        product.setProduct_id(Integer.parseInt(request.getParameter("product_id")));
+        product.setProduct_name(request.getParameter("product_name"));
+        product.setBrand(request.getParameter("brand"));
+        product.setManufacture_date(manufacture_form);
+        product.setPurchase_date(purchase_form);
+        product.setPurchase_price(Integer.parseInt(request.getParameter("purchase_price")));
+        product.setPurchase_url(request.getParameter("purchase_url"));
+        product.setDestruction(Integer.parseInt(request.getParameter("destruction")));
+        product.setDeprecation(Integer.parseInt(request.getParameter("deprecation")));
+        product.setAs_number(request.getParameter("as_number"));
         
-        return productService.productUpdateService(product);
-              		
+        productService.productUpdateService(product);
+        
+        return "redirect:/detail/" + request.getParameter("product_id");
     }
     
     @RequestMapping("/delete/{product_id}")

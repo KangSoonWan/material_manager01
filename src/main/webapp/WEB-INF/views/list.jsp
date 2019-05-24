@@ -11,17 +11,19 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%@include file="/WEB-INF/include/header.jsp" %>
+
 <h2> 제품 목록 </h2>
  
 <button class="btn btn-primary" onclick="location.href='/insert'">글쓰기</button>
-<button class="btn btn-primary" onclick="location.href='/detail'">상세</button>
+
 <div class="container">
     <table class="table table-hover">
         <tr>
            
         </tr>
           <c:forEach var="list" items="${list}">
-              <tr>
+              <tr onclick="location.href='/detail/${list.product_id}'"> 
               	  <td>${list.product_id}</td>
                   <td>${list.brand}</td>
                   <td>${list.manufacture_date}</td>
